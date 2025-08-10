@@ -28,7 +28,7 @@ bool queuePush(queue *q, int val)
     else
     {
         q->data[q->Rear] = val;
-        q->Rear = (++q->Rear % MAXQUEUEELEMENT);
+        q->Rear = (q->Rear + 1) % MAXQUEUEELEMENT;
         return true;
     }
 }
@@ -39,7 +39,7 @@ bool queuePull(queue *q, int *val)
     else
     {
         *val = q->data[q->Front];
-        q->Front = (++q->Front % MAXQUEUEELEMENT);
+        q->Front = (q->Front + 1) % MAXQUEUEELEMENT;
         return true;
     }
 }

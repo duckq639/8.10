@@ -8,6 +8,11 @@ int main()
     int value = 1;
     int *p = &value;
     queueInit(queue1P);
-    queuePush(queue1P, value);
-    printf("%d", queue1P->data[queue1P->Front]);
+    for (int i = 0; i < 5; i++)
+        queuePush(queue1P, i);
+    for (int i = 0; i < 2; i++)
+    {
+        queuePull(queue1P, p);
+        printf("%d ", *p);
+    }
 }
